@@ -1,0 +1,36 @@
+﻿@using MagicTheGathering_Catalog.Models.ViewModel
+@model SalesRecordFormViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<h2 class="mg-left-10px">@ViewData["Title"]</h2>
+<form class="form" method="post">
+    <div class="form-wrapper">
+        <div class="row">
+            <div class="col-sm-6 col-md-5">
+                <label class="block">Amount</label>
+                <input asp-for="SalesRecord.Amount" />
+                <span class="color-red" asp-validation-for="SalesRecord.Amount"></span>
+            </div>
+            <div class="col-sm-6 col-md-5">
+                <label class="block" asp-for="SalesRecord.Seller.Id">Seller</label>
+                <select asp-for="SalesRecord.Seller.Id" asp-items=@(new SelectList(Model.Sellers, "Id", "Name"))>
+                </select>
+            </div>
+            <div class="col-12 col-md-2">
+                <button style="margin: 38px 0 0;" class="btn btn-md bg-color-green color-white" type="submit">Create</button>
+            </div>
+        </div>
+
+    </div>
+</form>
+
+<a class="btn btn-md bg-color-blue color-white mg-bottom-5px mg-top-20px" asp-action="Index">Go back</a>
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }
