@@ -24,6 +24,7 @@ https://youtu.be/_tv8w8CFbSk
 ## :white_check_mark: Requisitos para executar o código fonte na sua máquina
 
 - [x] Ter Visual Studio instalado na sua máquina (recomendo usar VS2022)
+- [x] Ter .NET 6 disponivel na sua máquina
 
 
 ## 🚀 Executando o projeto
